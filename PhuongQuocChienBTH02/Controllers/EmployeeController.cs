@@ -52,7 +52,7 @@ namespace PhuongQuocChienBTH02.Controllers
 
         // POST: Employee/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ID,MaNV,phongban,tên")] Employee employee)
@@ -84,7 +84,7 @@ namespace PhuongQuocChienBTH02.Controllers
 
         // POST: Employee/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(string id, [Bind("ID,MaNV,phongban,tên")] Employee employee)

@@ -11,6 +11,7 @@ namespace PhuongQuocChienBTH02.Controllers
 {
     public class StudentController : Controller
     {
+        // KHAI BAO ApplicationDbContext
         private readonly MvcMovieContext _context;
 
         public StudentController(MvcMovieContext context)
@@ -18,11 +19,11 @@ namespace PhuongQuocChienBTH02.Controllers
             _context = context;
         }
 
-        // GET: Student
+        // xay dung action tra ve danh sach SinhVien
         public async Task<IActionResult> Index()
         {
               return _context.Student != null ? 
-                          View(await _context.Student.ToListAsync()) :
+                          View(await _context.Student.ToListAsync()) : // await su ly nhieu du lieu cung 1 luc
                           Problem("Entity set 'MvcMovieContext.Student'  is null.");
         }
 
