@@ -51,6 +51,20 @@ namespace BaiThucHanhExcel.Migrations
                     b.ToTable("Employee");
                 });
 
+            modelBuilder.Entity("BaiThucHanhExcel.Models.Faculty", b =>
+                {
+                    b.Property<string>("FacultyID")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("FacultyName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("FacultyID");
+
+                    b.ToTable("Faculty");
+                });
+
             modelBuilder.Entity("BaiThucHanhExcel.Models.Person", b =>
                 {
                     b.Property<string>("PersonID")
@@ -74,6 +88,13 @@ namespace BaiThucHanhExcel.Migrations
                     b.Property<string>("StudentID")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("FacultyID")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("FaculytyID")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("StudentAddress")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -84,7 +105,18 @@ namespace BaiThucHanhExcel.Migrations
 
                     b.HasKey("StudentID");
 
+                    b.HasIndex("FaculytyID");
+
                     b.ToTable("Student");
+                });
+
+            modelBuilder.Entity("BaiThucHanhExcel.Models.Student", b =>
+                {
+                    b.HasOne("BaiThucHanhExcel.Models.Faculty", "Faculty")
+                        .WithMany()
+                        .HasForeignKey("FaculytyID");
+
+                    b.Navigation("Faculty");
                 });
 #pragma warning restore 612, 618
         }

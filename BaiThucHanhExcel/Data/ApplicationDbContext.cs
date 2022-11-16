@@ -19,4 +19,6 @@ using BaiThucHanhExcel.Models;
         public DbSet<BaiThucHanhExcel.Models.Customer>? Customer { get; set; }
 
         public DbSet<BaiThucHanhExcel.Models.Employee>? Employee { get; set; }
+
+        public DbSet<BaiThucHanhExcel.Models.Faculty>? Faculty {get; set;}
     }
